@@ -68,7 +68,7 @@ public class Grade {
 			//프로그램 종료 메세지 출력
 			System.out.println("프로그램 종료");
 		
-		
+			scanner.close();
 	}
 
 }

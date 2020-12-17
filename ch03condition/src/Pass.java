@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Pass {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		// 입력받는 객체 Scanner 불러온다.(생성한다.-new)
 		Scanner scanner = new Scanner(System.in);
 		
@@ -25,6 +25,8 @@ public class Pass {
 		
 		// 프로그램이 종료된다라고 출력한다.
 		System.out.println("프로그램이 종료됩니다.");
+		
+		scanner.close();
 		
 	}
 

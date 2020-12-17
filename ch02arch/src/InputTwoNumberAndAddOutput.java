@@ -25,6 +25,8 @@ public class InputTwoNumberAndAddOutput {
 		// 문자열인 경우 "+" 연산은 이어 붙이기가 된다.
 
 		System.out.println(number1 + " + " + number2 + " = " + number3);
+		
+		scanner.close();
 	}
 
 }

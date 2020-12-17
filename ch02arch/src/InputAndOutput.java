@@ -26,6 +26,8 @@ public class InputAndOutput {
 
 		// data 를 출력한다.
 		System.out.println(data);
+		
+		scanner.close();
 
 	}
 }
