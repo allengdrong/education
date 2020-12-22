@@ -19,12 +19,14 @@ public class IntegerDataExcep {
 				break;
 				// 예외처리
 			} catch (NumberFormatException e) {
+				e.printStackTrace();
 
 				// 숫자 데이터가 아닙니다. 출력한다.
 				System.out.println("숫자만 입력이 가능합니다.");
 
 			}
-
+			scanner.close();
+			System.out.println("프로그램 종료");
 		}
 	}
 
