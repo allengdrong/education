@@ -7,8 +7,9 @@ public class MainController {
 		System.out.println("MainController.main() - 시작");
 
 		// BoardController로 이동 실행 : 생성(생성자-new)하고 메서드 execute()를 호출한다.
-		BoardController boardcontroll = new BoardController();
-		boardcontroll.execute();
+
+		BoardController boardController = new BoardController(); // 생성한 객체의 주소를 변수에 저장한다.
+		boardController.execute();
 
 
 		// 다시 돌아와서 출력한다.
