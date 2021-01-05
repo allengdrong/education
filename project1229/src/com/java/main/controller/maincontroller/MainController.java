@@ -1,8 +1,8 @@
-package com.java.main.controller.MainController;
+package com.java.main.controller.maincontroller;
 
 import java.util.Scanner;
-import com.java.board.controller.BoardController.BoardController;
-import com.java.qna.controller.QnaController.QnaController;
+import com.java.board.controller.boardcontroller.BoardController;
+import com.java.qna.controller.qnacontroller.QnaController;
 
 public class MainController {
 

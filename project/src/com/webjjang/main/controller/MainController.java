@@ -1,6 +1,7 @@
 package com.webjjang.main.controller;
 
 import java.util.Scanner;
+// [MainController] - Controller - Service -DAO
 import com.webjjang.board.controller.BoardController;
 import com.webjjang.memo.controller.MemoController;
 import com.webjjang.notice.controller.NoticeController;

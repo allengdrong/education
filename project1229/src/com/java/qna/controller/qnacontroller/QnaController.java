@@ -1,8 +1,7 @@
-package com.java.qna.controller.QnaController;
+package com.java.qna.controller.qnacontroller;
 
 import java.util.Scanner;
-
-import com.java.main.controller.MainController.Controller;
+import com.java.main.controller.maincontroller.Controller;
 
 public class QnaController implements Controller {
 

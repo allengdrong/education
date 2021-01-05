@@ -1,4 +1,4 @@
-package com.java.main.controller.MainController;
+package com.java.main.controller.maincontroller;
 
 public interface Controller {
 

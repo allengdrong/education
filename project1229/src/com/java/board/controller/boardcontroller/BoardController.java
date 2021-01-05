@@ -1,7 +1,7 @@
-package com.java.board.controller.BoardController;
+package com.java.board.controller.boardcontroller;
 
 import java.util.Scanner;
-import com.java.main.controller.MainController.Controller;
+import com.java.main.controller.maincontroller.Controller;
 
 public class BoardController implements Controller {
 
