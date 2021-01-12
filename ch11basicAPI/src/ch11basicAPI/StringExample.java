@@ -3,6 +3,8 @@ package ch11basicAPI;
  * String은 문자열로 되어져 있다. char[] 인덱스 사용, 길이가 있다. 부분 문자열 조작과 바꾸기, 삭제, 포함관계
  */
 
+import java.util.Arrays;
+
 public class StringExample {
 
 	public static void main(String[] args) {
@@ -64,7 +66,48 @@ public class StringExample {
 		data = "10, 20, 30, 40,";
 		data = data.substring(0, data.length() - 1);
 		System.out.println(data);
-		// referenced libraries - ojdbc6.jar
+
+		// 특별한 구분자로 분할을 해서 여러 데이터로 만들기
+		String tel = "010-1234-1234";
+		String[] tels = tel.split("-");
+		System.out.println(Arrays.toString(tels)); // 화면
+
+		// 특별한 구분자로 이어서 한개의 문자로 만들기
+		System.out.println(Arrays.toString(tels)); // 화면 입력
+		tel = String.join("-", tels);
+		System.out.println(tel);
+
+		// 점수 배열을 한 개의 문자열로 만들어서 출력하기
+		int[] scores = {100, 90, 85, 95}; // 여러개의 점수 데이터 초기값 셋팅
+		String[] strScores = new String[scores.length]; // 숫자로 되어 있는 것을 문자열로 만들어서 저장하려는 변수 선언과 생성
+		for (int i = 0; i < scores.length; i++)
+			strScores[i] = "" + scores[i]; // 숫자를 문자로 변환해서 저장
+		System.out.println(Arrays.toString(scores));
+		data = String.join(",", strScores); // 문자열의 조인 - 데이터 사이에 정해진 문자열 넣기
+		System.out.println(data);
+
+		// for문을 이용한 출력문자열 만들기
+		data = "";
+		for (int i = 0; i < scores.length; i++)
+			data += scores[i] + ",";
+		System.out.println(data);
+		// 마지막 구분문자를 제거
+		data = data.substring(0, data.length() - 1);
+		System.out.println(data);
+
+		// 전화번호, 우편번호, 생년월일(xxxx-xx-xx)
+
+		// 이름을 입력하세요. -앞뒤로 공백문자가 존재하면 안된다.
+		String name = "        l e  e         ";
+		System.out.println("[" + name + "]");
+		// 공백문자 제거
+		name = name.trim();
+		System.out.println(name);
+		// 이름이나 아이디는 모두 대문자로 처리하자.
+		name = name.toUpperCase();
+		System.out.println(name);
+		// 중간에 공백문자 -> indexOf(" "), replaceAll(" ", "");
+
 	}
 
 }
