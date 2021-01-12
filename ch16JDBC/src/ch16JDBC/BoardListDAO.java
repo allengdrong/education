@@ -66,7 +66,7 @@ public class BoardListDAO {
 						list = new ArrayList<BoardVO>();
 					// 한줄의 데이터를 담을 BoardVO 객체 생성 - 데이터 있는 만큼 한다.
 					BoardVO vo = new BoardVO();
-					// 출력대신 vo객체 데이터를 담는다. - setter() 사용
+					// 출력대신 vo객체 데이터를 담는다.
 					vo.setNo(rs.getInt("no"));
 					vo.setTitle(rs.getString("title"));
 					vo.setWriter(rs.getString("writer"));
