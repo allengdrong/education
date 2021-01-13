@@ -19,10 +19,13 @@ public class BoardListDAO {
 		Connection con = null;
 		// 실행 객체
 		PreparedStatement pstmt = null;
-		// 저장 객체
+		// 저장 객체 - select에서만 나타난다.
 		ResultSet rs = null;
 
 		// 나중에 넘겨줄 데이터
+		// 1. list - List
+		// 2. view - BoardVO
+		// 3. insert, 4. update, 5. delete - int
 		List<BoardVO> list = null;
 
 		// DB(오라클) 접속 정보

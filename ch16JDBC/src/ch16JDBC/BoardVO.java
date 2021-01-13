@@ -31,7 +31,7 @@ public class BoardVO {
 	}
 
 	public void setContent(String content) {
-		this.title = content;
+		this.content = content;
 	}
 
 	public String getWriter() {
@@ -59,7 +59,7 @@ public class BoardVO {
 	}
 
 	// 데이터 확인용 메서드
-	public String tpString() {
+	public String toString() {
 		return getClass().getSimpleName() + "[no = " + no + ", title = " + title + ", content = "
 				+ content + ", writer = " + writer + ", writeDate = " + writeDate + ", hit = " + hit
 				+ "]";
