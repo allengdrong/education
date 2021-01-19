@@ -60,9 +60,127 @@ public class BoardDAO {
 		} finally {
 			// 7. 닫기
 			DBInfo.close(con, pstmt, rs);
-		}
+		} // end of try~catch ~ finally
+
+	} // end of list()
+
+	// 게시판 글보기 -------------------------------------
+	public BoardVO view(long no) throws Exception {
+
+		// 실행한 결과를 저장하는 객체 선언
+		BoardVO vo = null;
+
+		// DB의 정보는 DBInfo 객체에 넣어놨다.
+
+		try {
+			// 1. 드라이버 확인 - DBInfo 에서 처리함.
+			// 2. 연결객체
+			con = DBInfo.getConnection();
+			// 3. 쿼리작성 - DAOSQL에 선언됨.
+			System.out.println(DAOSQL.BOARD_VIEW);
+			// 4. 실행객체 & 데이터 셋팅
+			pstmt = con.prepareStatement(DAOSQL.BOARD_VIEW);
+			pstmt.setLong(1, no);
+			// 5. 실행
+			rs = pstmt.executeQuery();
+			// 6. 출력 -> 데이터 저장 후 리턴
+			if (rs != null & rs.next()) {
+				// rs -> vo 저장을 위해 vo 객체 생성
+				vo = new BoardVO();
+				vo.setNo(rs.getLong("no"));
+				vo.setTitle(rs.getString("title"));
+				vo.setContent(rs.getString("content"));
+				vo.setWriter(rs.getString("writer"));
+				vo.setWriteDate(rs.getString("writeDate"));
+				vo.setHit(rs.getLong("hit"));
+
+			} // end of if()
+
+			return vo;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("게시판 글보기 데이터 처리 중 DB오류가 발생되었습니다.");
+		} finally {
+			// 7. 닫기
+			DBInfo.close(con, pstmt, rs);
+		} // end of try~catch ~ finally
 
 
 
-	}
+	} // end of view()
+
+	// 조회수 1 증가 -------------------------------------
+	public int increase(long no) throws Exception {
+
+		// 실행한 결과를 저장하는 객체 선언
+		int result = 0;
+
+		// DB의 정보는 DBInfo 객체에 넣어놨다.
+
+		try {
+			// 1. 드라이버 확인 - DBInfo 에서 처리함.
+			// 2. 연결객체
+			con = DBInfo.getConnection();
+			// 3. 쿼리작성 - DAOSQL에 선언됨.
+			System.out.println(DAOSQL.BOARD_INCREASE);
+			// 4. 실행객체 & 데이터 셋팅
+			pstmt = con.prepareStatement(DAOSQL.BOARD_INCREASE);
+			pstmt.setLong(1, no);
+			// 5. 실행 - update -> 결과가 int
+			result = pstmt.executeUpdate();
+			// 6. 출력 -> 데이터 저장 후 리턴
+			System.out.println("BoardDAO.increase() : 글보기 조회수 1증가 완료");
+
+			return result;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("게시판 글보기 조회수 1증가 처리 중 오류가 발생되었습니다.");
+		} finally {
+			// 7. 닫기
+			DBInfo.close(con, pstmt, rs);
+		} // end of try~catch ~ finally
+
+
+
+	} // end of view()
+
+	// 게시판 글쓰기 -------------------------------------
+	public int write(BoardVO vo) throws Exception {
+
+		// 실행한 결과를 저장하는 객체 선언
+		int result = 0;
+
+		// DB의 정보는 DBInfo 객체에 넣어놨다.
+
+		try {
+			// 1. 드라이버 확인 - DBInfo 에서 처리함.
+			// 2. 연결객체
+			con = DBInfo.getConnection();
+			// 3. 쿼리작성 - DAOSQL에 선언됨.
+			System.out.println(DAOSQL.BOARD_WRITE);
+			// 4. 실행객체 & 데이터 셋팅
+			pstmt = con.prepareStatement(DAOSQL.BOARD_WRITE);
+			pstmt.setString(1, vo.getTitle());
+			pstmt.setString(2, vo.getContent());
+			pstmt.setString(3, vo.getWriter());
+			// 5. 실행 - insert -> 결과가 int
+			result = pstmt.executeUpdate();
+			// 6. 출력 -> 데이터 저장 후 리턴
+			System.out.println("BoardDAO.write() : 글쓰기 완료");
+
+			return result;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("게시판 글쓰기 처리 중 DB오류가 발생되었습니다.");
+		} finally {
+			// 7. 닫기
+			DBInfo.close(con, pstmt, rs);
+		} // end of try~catch ~ finally
+
+
+
+	} // end of view()
 }

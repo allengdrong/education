@@ -16,16 +16,12 @@ public class Output {
 
 	// 환영인사, 작별인사
 	public static void greeting(String str) {
-		line("*", 30);
-		System.out.println("* " + str);
-		line("*", 30);
+		printWithLine(str, "*", 30);
 	}
 
 	// 위치 정보 출력하기
 	public static void position(String p) {
-		line("-", 30);
-		System.out.println("- position : " + p);
-		line("-", 30);
+		printWithLine("position : " + p, "-", 30);
 	}
 
 	// 메뉴 출력
@@ -40,6 +36,17 @@ public class Output {
 	public static void exePos(String str) {
 		System.out.println("***+++ " + str + " +++***");
 
+	}
+
+	// 제목을 출력
+	public static void title(String str) {
+		printWithLine(str, "*", 20);
+	}
+	// 위, 아래 반복되는 문자와 반복 횟수를 받아서 입력받은 문자열 가운데 출력하는 메서드
+	public static void printWithLine(String str, String loopChar, int cnt) {
+		line(loopChar, cnt);
+		System.out.println(loopChar + " " + str);
+		line(loopChar, cnt);
 	}
 
 }

@@ -10,6 +10,7 @@ import com.webjjang.util.Output;
 
 public class MainController {
 
+	// static 블록 - static 초기화 : DB의 드라이버 확인 - DB 드라이버 프로그램 안에 static이 로딩된다.
 	static {
 		System.out.println("MainController 실행 시작");
 		// 프로젝트가 시작과 동시에 처리해야할 내용을 여기에 넣는다.
@@ -72,8 +73,10 @@ public class MainController {
 
 	} // end of main()
 
-	// moduleController를 실행하는 메서드 - 인터페이스
+	// moduleController를 실행하는 메서드 - 인터페이스 : 프록시 프로그램 패턴 - 필터(JSP), 인터셉터(SPRING)
 	private static void execute(Controller controller) {
+		// 공통 처리
+		// 정보 출력 ( 로그 출력)
 		Output.exePos(controller.getClass().getSimpleName() + ".execute()");
 		controller.execute();
 	}

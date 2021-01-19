@@ -14,4 +14,15 @@ public class DAOSQL {
 					+ " select no, title,  writer, writeDate, hit from board" + " order by no desc "
 					+ " ) " + " ) where rnum between 1 and 10";
 
+	// 2. 게시판 글보기
+	public static final String BOARD_VIEW =
+			" select no, title, content, writer, to_char(writeDate, 'yyyy.mm.dd') writeDate, hit"
+					+ " from board where no = ? ";
+	// 2-1. 게시판 글보기 전에 먼저 조회수 1증가시키는 쿼리
+	public static final String BOARD_INCREASE = " update board set hit = hit + 1 where no = ? ";
+
+	// 3. 게시판 글쓰기
+	public static final String BOARD_WRITE =
+			" insert into board(no, title, content, writer) values(board_seq.nextval, ?, ?, ?)";
 }
+
