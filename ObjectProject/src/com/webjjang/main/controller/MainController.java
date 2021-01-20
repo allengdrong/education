@@ -5,6 +5,8 @@
 package com.webjjang.main.controller;
 
 import com.webjjang.board.controller.BoardController;
+import com.webjjang.image.controller.ImageController;
+import com.webjjang.notice.controller.NoticeController;
 import com.webjjang.util.Input;
 import com.webjjang.util.Output;
 
@@ -42,15 +44,19 @@ public class MainController {
 			switch (menu) {
 				case "1":
 					System.out.println("1.공지사항 처리");
+					execute(new NoticeController());
 					break;
 				case "2":
-
+					System.out.println("2. 이미지 처리");
+					// 생성 -> 호출
+					execute(new ImageController());
 					break;
 				case "3":
 
 					break;
 				case "4":
 					System.out.println("4. 게시판 처리");
+					// 생성 -> 호출
 					execute(new BoardController());
 					break;
 				case "5":
@@ -65,7 +71,7 @@ public class MainController {
 					// 종료
 					System.exit(0);
 				default:
-
+					Output.printWithLine("잘못된 메뉴를 선택하셨습니다.", "%", 40);
 					break;
 			}
 		} // end of while
@@ -78,6 +84,7 @@ public class MainController {
 		// 공통 처리
 		// 정보 출력 ( 로그 출력)
 		Output.exePos(controller.getClass().getSimpleName() + ".execute()");
+		// 컨트롤러 실행 -> 호출한다.
 		controller.execute();
 	}
 
