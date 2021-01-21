@@ -1,8 +1,33 @@
-/*
- * 데이터를 입력하는 객체 getString(), getInt(), getLong()
- */
 
 package com.webjjang.util;
+/**
+ * <h3>데이터를 입력하는 객체</h3>
+ * 
+ * <p>
+ * <h4>getString()</h4> 문자열을 scanner.nextLine()에 의해서 사용자가 입력하는 메서드
+ * 
+ * <h4>getString(String msg)</h4> 문자열을 입력하기 전에 msg를 출력하고 사용자가 입력(getString() 호출)을 하는 메서드
+ * 
+ * <h4>getInt()</h4> 사용자가 입력한 문자열을 받아서(getString() 호출) int로 바꿔서 리턴하는 메서드. 정확한 int 숫자가 들어오지 않으면 계속
+ * 반복처리한다.
+ * 
+ * <h4>getInt(String msg)</h4> 문자열을 입력하기 전에 msg를 출력하고 사용자가 입력(getString() 호출) int로 바꿔서 리턴하는 메서드. 정확한
+ * int 숫자가 들어오지 않으면 계속
+ * 
+ * <h4>getLong()</h4> 사용자가 입력한 문자열을 받아서(getString() 호출) long로 바꿔서 리턴하는 메서드. 정확한 long 숫자가 들어오지 않으면 계속
+ * 반복처리한다.
+ * 
+ * <h4>getLong(String msg)</h4> 문자열을 입력하기 전에 msg를 출력하고 사용자가 입력(getString() 호출) long로 바꿔서 리턴하는 메서드.
+ * 정확한 long 숫자가 들어오지 않으면 계속 반복처리한다.
+ * 
+ * <h4>getString()</h4>
+ * <h4>getString()</h4>
+ * </p>
+ * 
+ * @버전 1.0
+ * @작성일 2021.01.21
+ * @작성자 고선호
+ */
 
 import java.util.Scanner;
 

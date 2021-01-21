@@ -144,7 +144,7 @@ public class BoardDAO {
 
 
 
-	} // end of view()
+	} // end of view+1()
 
 	// 게시판 글쓰기 -------------------------------------
 	public int write(BoardVO vo) throws Exception {
@@ -182,7 +182,7 @@ public class BoardDAO {
 
 
 
-	} // end of view()
+	} // end of write()
 
 	// 게시판 글수정 -------------------------------------
 	public int update(BoardVO vo) throws Exception {
@@ -221,7 +221,7 @@ public class BoardDAO {
 
 
 
-	} // end of view()
+	} // end of update()
 
 	// 게시판 글삭제 -------------------------------------
 	public int delete(long no) throws Exception {
@@ -257,7 +257,7 @@ public class BoardDAO {
 
 
 
-	} // end of view()
+	} // end of delete()
 
 
 }
